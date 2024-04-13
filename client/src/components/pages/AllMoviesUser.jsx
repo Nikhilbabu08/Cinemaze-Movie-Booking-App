@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import checkAuth from '../auth/user/checkAuth';
+import  API_BASE_URL  from './../../config'
 
 const AllMoviesUser = () => {
     const admin = useSelector(store => store.auth.admin)
@@ -16,7 +17,7 @@ const AllMoviesUser = () => {
 
     // Fetch data from API when the component mounts.
     useEffect(() => {
-        axios.get('http://localhost:3001/movie')
+        axios.get(`${API_BASE_URL}/movie`)
             .then((res) => { setMovies(res.data.allMovies); setIsLoading(false) })
             .catch((error) => console.error('Error fetching movies:', error));
     }, []);

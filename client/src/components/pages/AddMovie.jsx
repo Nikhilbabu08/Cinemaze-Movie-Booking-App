@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import checkAuth from '../auth/admin/checkAuth';
 import axios from 'axios';
+import  API_BASE_URL  from './../../config'
+
 
 const AddMovie = () => {
     const admin = useSelector(store=> store.auth.admin)
@@ -19,7 +21,7 @@ const AddMovie = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/movie', {
+        axios.post(`${API_BASE_URL}/movie`, {
             title, director, actors, description, genre, releaseDate, posterUrl, bookingStartDate
         },{ headers: { 'Authorization': `Bearer ${admin.token}`}
      })

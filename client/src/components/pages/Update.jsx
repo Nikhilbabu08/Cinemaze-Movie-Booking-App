@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import checkAuth from '../auth/admin/checkAuth';
 import axios from 'axios';
+import  API_BASE_URL  from './../../config'
+
 
 const Update = () => {
     const { movieId } = useParams()
@@ -19,7 +21,7 @@ const Update = () => {
     const [errorMsg, setErrorMsg] = useState('')
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/movie/` + movieId, {
+        axios.get(`${API_BASE_URL}/movie/` + movieId, {
             headers: { 'Authorization': `Bearer ${admin.token}` }
         })
             .then(response => {
@@ -36,7 +38,7 @@ const Update = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put(`http://localhost:3001/movie/${movieId}`, {
+        axios.put(`${API_BASE_URL}/movie/${movieId}`, {
             title, director, actors, description, genre, releaseDate, posterUrl, bookingStartDate
         }, {
             headers: { 'Authorization': `Bearer ${admin.token}` }

@@ -3,6 +3,7 @@ import { Link,NavLink,useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { adminLogout, userLogout } from '../../store/AuthSlice';
+import  API_BASE_URL  from './../../config'
 
 
 const NavBar = () => {
@@ -13,7 +14,7 @@ const NavBar = () => {
 
   const handleAdminLogout =()=>{
     if(admin){
-      axios.post('http://localhost:3001/admin/logout',{},{
+      axios.post(`${API_BASE_URL}/admin/logout`,{},{
         headers:{'Authorization':`Bearer ${admin.token}`}
       })
       dispatch(adminLogout())
@@ -23,7 +24,7 @@ const NavBar = () => {
 
   const handleUserLogout =()=>{
     if(user){
-      axios.post('http://localhost:3001/user/logout',{},{
+      axios.post(`${API_BASE_URL}/user/logout`,{},{
         headers:{'Authorization':`Bearer ${user.token}`}
       })
       dispatch(userLogout())

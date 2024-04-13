@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from "react-redux";
-
 import axios from 'axios'
 import { setUser } from '../../../store/AuthSlice';
+import  API_BASE_URL  from '../../../config'
 
 const UserLogin = () => {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ const UserLogin = () => {
   const [errorMsg, setErrorMsg] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/user/login', {
+    axios.post(`${API_BASE_URL}/user/login`, {
       email: email,
       password: password
     })

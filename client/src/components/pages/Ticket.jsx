@@ -6,6 +6,8 @@ import QRCode from 'qrcode.react';
 import html2canvas from 'html2canvas';
 import jsPDF from "jspdf";
 import checkAuth from '../auth/user/checkAuth';
+import  API_BASE_URL  from './../../config'
+
 
 const Ticket = () => {
     const { bookingId } = useParams();
@@ -15,7 +17,7 @@ const Ticket = () => {
 
     useEffect(() => {
         if (user?.token) {
-            axios.get(`http://localhost:3001/booking/${bookingId}`, {
+            axios.get(`${API_BASE_URL}/booking/${bookingId}`, {
                 headers: { 'Authorization': `Bearer ${user.token}` }
             }).then(res => { setBooking(res.data); setIsLoading(false); })
                 .catch(err => { console.log(err); setIsLoading(false); });

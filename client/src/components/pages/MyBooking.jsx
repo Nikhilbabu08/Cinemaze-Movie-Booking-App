@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import checkAuth from '../auth/user/checkAuth';
+import  API_BASE_URL  from './../../config'
 
 const MyBooking = () => {
     const navigate = useNavigate()
@@ -13,7 +14,7 @@ const MyBooking = () => {
     useEffect(() => {
         // Fetch bookings
         if (user?.token) {
-            axios.get('http://localhost:3001/booking', {
+            axios.get(`${API_BASE_URL}/booking`, {
                 headers: { 'Authorization': `Bearer ${user.token}` },
                 params: { user: user.id } // Pass userId as a query parameter
             })
@@ -25,7 +26,7 @@ const MyBooking = () => {
     }, [user?.token]);
 
     const handleDelete = (bookingId) => {
-        axios.delete(`http://localhost:3001/booking/${bookingId}`, {
+        axios.delete(`${API_BASE_URL}/booking/${bookingId}`, {
             headers: { 'Authorization': `Bearer ${user.token}` }
         }).then((response) => {
             setBookings(prevBooking => prevBooking.filter(booking => booking._id !== bookingId))

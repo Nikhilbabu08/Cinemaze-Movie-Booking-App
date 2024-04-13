@@ -3,6 +3,7 @@ import { Link, useParams, useNavigate } from "react-router-dom"
 import axios from "axios";
 import { useSelector } from 'react-redux'
 import checkAuth from '../auth/user/checkAuth';
+import  API_BASE_URL  from './../../config'
 
 const View = () => {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const View = () => {
 
     useEffect(() => {
         if (user?.token) {
-            axios.get('http://localhost:3001/movie/' + movieId, {
+            axios.get(`${API_BASE_URL}/movie/` + movieId, {
                 headers: { 'Authorization': `Bearer ${user.token}` }
             }).then(res => { setMovie(res.data) })
                 .catch(err => console.log(err));
@@ -43,7 +44,7 @@ const View = () => {
 
     useEffect(() => {
         // Fetch Razorpay key from backend API
-        axios.get('http://localhost:3001/api/getkey')
+        axios.get(`${API_BASE_URL}/api/getkey`)
             .then(response => {
                 setRazorpayKey(response.data.key);
             })
@@ -54,7 +55,7 @@ const View = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/booking', {
+        axios.post(`${API_BASE_URL}/booking`, {
             movie: movie.result.title,
             poster: movie.result.posterUrl,
             date,
@@ -110,7 +111,7 @@ const View = () => {
     };
 
     const sendEmail = (bookingId, movieTitle, bookingDate, bookingTime, bookingSeats) => {
-        axios.post('http://localhost:3001/email', {
+        axios.post(`${API_BASE_URL}/email`, {
             id: bookingId,
             movie: movieTitle,
             date: bookingDate,

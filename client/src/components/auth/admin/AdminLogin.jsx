@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import { setAdmin } from '../../../store/AuthSlice';
 import axios from 'axios'
+import API_BASE_URL from '../../../config';
+
 
 const AdminLogin = () => {
   const dispatch = useDispatch()
@@ -12,7 +14,7 @@ const AdminLogin = () => {
   const [errorMsg, setErrorMsg] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/admin/login', {
+    axios.post(`${API_BASE_URL}/admin/login`, {
       email: email,
       password: password
     })

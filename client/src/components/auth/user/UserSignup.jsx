@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import  API_BASE_URL  from '../../../config'
 
 const UserSignup = () => {
   const navigate = useNavigate()
@@ -10,7 +11,7 @@ const UserSignup = () => {
   const [errorMsg, setErrorMsg] = useState('')
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3001/user/signup', {
+    axios.post(`${API_BASE_URL}/user/signup`, {
       name:name,
       email: email,
       password: password

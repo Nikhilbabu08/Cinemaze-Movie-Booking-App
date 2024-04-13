@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import  API_BASE_URL  from './../../config'
 
 const ShowCard = () => {
     const admin = useSelector(store => store.auth.admin)
@@ -14,7 +15,7 @@ const ShowCard = () => {
     });
 
     useEffect(() => {
-        axios.get('http://localhost:3001/movie')
+        axios.get(`${API_BASE_URL}/movie`)
             .then((res) => { setMovies(res.data.allMovies); setLoading(false); })
             .catch((error) => {
                 console.error('Error fetching movies:', error);

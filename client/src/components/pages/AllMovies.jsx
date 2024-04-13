@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import Modal from './ModalDelete';
 import checkAuth from '../auth/admin/checkAuth';
+import  API_BASE_URL  from './../../config'
 
 const AllMovies = () => {
   const navigate = useNavigate()
@@ -21,7 +22,7 @@ const AllMovies = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/movie')
+    axios.get(`${API_BASE_URL}/movie`)
       .then((res) => { setMovies(res.data.allMovies); setIsLoading(false); })
       .catch((error) => console.error('Error fetching movies:', error));
   }, []);
@@ -36,7 +37,7 @@ const AllMovies = () => {
   };
 
   const confirmDelete = () => {
-    axios.delete(`http://localhost:3001/movie/${deleteItemId}`, {
+    axios.delete(`${API_BASE_URL}/movie/${deleteItemId}`, {
       headers: { 'Authorization': `Bearer ${admin.token}` }
     }).then((response) => {
       setMovies(prevMovie => prevMovie.filter(movie => movie._id !== deleteItemId))
@@ -54,7 +55,7 @@ const AllMovies = () => {
       setDisabledMovies(prevDisabledMovies => [...prevDisabledMovies, movieId]);
     }
 
-    axios.put(`http://localhost:3001/movie/${movieId}/toggleDisableMovie`, {}, {
+    axios.put(`${API_BASE_URL}/movie/${movieId}/toggleDisableMovie`, {}, {
       headers: { 'Authorization': `Bearer ${admin.token}` }
     })
       .then(response => {
