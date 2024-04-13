@@ -14,13 +14,21 @@ const app = express()
 
 dotenv.config();
 
-app.use(cors(
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+app.use(cors(corsOptions));
+
+/*app.use(cors(
     {
         origin: ["http://localhost:3000"],
         methods: ["GET", "POST"],
         credentials: true
     }
-));
+));*/
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use('/user', userRouter)
