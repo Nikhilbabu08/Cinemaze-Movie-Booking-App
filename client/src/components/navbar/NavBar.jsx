@@ -51,7 +51,7 @@ const NavBar = () => {
             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div className="offcanvas-body  ms-auto">
-            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <ul className="navbar-nav flex-grow-1 pe-3">
               {admin &&
                 <>
                   <li className="nav-item">
