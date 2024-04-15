@@ -57,7 +57,7 @@ const NavBar = () => {
               {admin &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/allMovies'} onClick={(event) => { event.preventDefault(); navigate('/allMovies') }} className="nav-link" >All Movies</Link>
+                    <Link to={'/allMovies'} onClick={(event) => { event.preventDefault(); navigate('/allMovies');document.getElementById("offcanvasNavbar").classList.remove("show") }} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
                     <Link to={'/addMovie'} onClick={(event) => { event.preventDefault(); navigate('/addMovie') }} className="nav-link">Add Movies</Link>
