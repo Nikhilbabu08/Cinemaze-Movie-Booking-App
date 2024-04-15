@@ -50,7 +50,7 @@ const NavBar = () => {
             <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel"><b><span style={{ color: "#ff5733" }}>CIN</span>E<span style={{ color: "#ff5733" }}>MAZ</span>E</b></h5>
             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div className="offcanvas-body  ms-auto" style={{ backgroundColor: "#154360 ", color: "#000" }}>
+          <div className="offcanvas-body" style={{ backgroundColor: "#154360 ", color: "#000" }}>
             <ul className="navbar-nav flex-grow-1 pe-3">
               {admin &&
                 <>
