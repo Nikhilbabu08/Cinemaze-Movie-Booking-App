@@ -2,10 +2,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  background:#F0F3F4 ;
-  color: #FFFFFF; /* Text color */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #F0F3F4;
+  color: #FFFFFF;
+  /* Text color */
   background-attachment: fixed;
 }
 
@@ -13,41 +14,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.carousel-col{
+
+.carousel-col {
   margin-top: 40px;
 }
+
 .carousel-inner {
   border-radius: 15px;
 }
-.carousel-wrapper{
+
+.carousel-wrapper {
   margin-top: 11px;
 }
+
 @media only screen and (max-width: 768px) {
   body {
-    background-size: contain; /* Change to contain for smaller screens */
+    background-size: contain;
+    /* Change to contain for smaller screens */
   }
 }
+
 .cardd-container {
-  display: flex; /* Display cards in a row */
-  overflow-x: auto; /* Enable horizontal scrolling */
+  display: flex;
+  /* Display cards in a row */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
 }
+
 .cardd-container::-webkit-scrollbar {
   display: none;
 }
 
 .cardd {
-  flex: 0 0 auto; /* Let the card size be determined by its content */
-  width: calc(20% - 10px); /* Set width for each card (4 cards in a row with 10px gap) */
-  margin-right: 10px; /* Adjust spacing between cards */
+  flex: 0 0 auto;
+  /* Let the card size be determined by its content */
+  width: calc(20% - 10px);
+  /* Set width for each card (4 cards in a row with 10px gap) */
+  margin-right: 10px;
+  /* Adjust spacing between cards */
 }
 
 .cardd:last-child {
-  margin-right: 0; /* Remove margin from the last card to prevent overflow */
+  margin-right: 0;
+  /* Remove margin from the last card to prevent overflow */
 }
 
 .cardd img {
-  width: 100%; /* Ensure the image fills the card horizontally */
-  height: 350px; /* Maintain aspect ratio of the image */
+  width: 100%;
+  /* Ensure the image fills the card horizontally */
+  height: 350px;
+  /* Maintain aspect ratio of the image */
 }
 
 .cardd-body {
@@ -64,8 +80,10 @@ code {
 }
 
 .btnn {
-  background-color: #3498DB; /* Sky Blue */
-  color: #FFFFFF; /* White or light color for text */
+  background-color: #3498DB;
+  /* Sky Blue */
+  color: #FFFFFF;
+  /* White or light color for text */
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -74,7 +92,8 @@ code {
 }
 
 .btnn:hover {
-  background-color: #2980B9; /* Darker shade of Sky Blue */
+  background-color: #2980B9;
+  /* Darker shade of Sky Blue */
 }
 
 .download-button-container {
@@ -86,44 +105,59 @@ code {
 .download-button {
   width: 35px;
   cursor: pointer;
-  transition: transform 0.3s ease; /* Smooth transition effect */
+  transition: transform 0.3s ease;
+  /* Smooth transition effect */
 }
 
 /* Hover effect for the download button */
 .download-button:hover {
-  transform: scale(1.1); /* Increase the size of the button on hover */
+  transform: scale(1.1);
+  /* Increase the size of the button on hover */
 }
 
 @media only screen and (max-width: 768px) {
   .cardd-container {
-    min-width: 100%; /* Ensure that the container takes up the full width */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent cards from wrapping to the next line */
+    min-width: 100%;
+    /* Ensure that the container takes up the full width */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent cards from wrapping to the next line */
   }
 
   .cardd {
-    flex: 0 0 auto; /* Let the card size be determined by its content */
-    width: calc(90% - 10px); /* Set width for each card (4 cards in a row with 10px gap) */
-    margin-right: 10px; /* Adjust spacing between cards */
+    flex: 0 0 auto;
+    /* Let the card size be determined by its content */
+    width: calc(90% - 10px);
+    /* Set width for each card (4 cards in a row with 10px gap) */
+    margin-right: 10px;
+    /* Adjust spacing between cards */
   }
 }
 
 
 .carddd-container {
   display: flex;
-  flex-wrap: wrap; /* Allow cards to wrap to the next row */
-  margin: -10px; /* Compensate for the negative margin on cards */
+  flex-wrap: wrap;
+  /* Allow cards to wrap to the next row */
+  margin: -10px;
+  /* Compensate for the negative margin on cards */
 }
 
 .carddd {
-  flex: 0 0 calc(25% - 20px); /* Set width for each card (4 cards in a row with 20px gap) */
-  margin: 10px; /* Adjust spacing between cards */
-  max-width: calc(25% - 20px); /* Adjust maximum width of the card */
+  flex: 0 0 calc(25% - 20px);
+  /* Set width for each card (4 cards in a row with 20px gap) */
+  margin: 10px;
+  /* Adjust spacing between cards */
+  max-width: calc(25% - 20px);
+  /* Adjust maximum width of the card */
 }
 
 .carddd img {
-  width: 100%; /* Ensure the image fills the card horizontally */
-  height: 350px; /* Maintain aspect ratio of the image */
+  width: 100%;
+  /* Ensure the image fills the card horizontally */
+  height: 350px;
+  /* Maintain aspect ratio of the image */
 }
 
 .carddd-body {
@@ -141,21 +175,27 @@ code {
 
 @media screen and (max-width: 992px) {
   .carddd {
-    flex: 0 0 calc(33.33% - 20px); /* Set width for each card (3 cards in a row with 20px gap) */
-    max-width: calc(33.33% - 20px); /* Adjust maximum width of the card */
+    flex: 0 0 calc(33.33% - 20px);
+    /* Set width for each card (3 cards in a row with 20px gap) */
+    max-width: calc(33.33% - 20px);
+    /* Adjust maximum width of the card */
   }
 }
 
 @media screen and (max-width: 768px) {
   .carddd {
-    flex: 0 0 calc(50% - 20px); /* Set width for each card (2 cards in a row with 20px gap) */
-    max-width: calc(50% - 20px); /* Adjust maximum width of the card */
+    flex: 0 0 calc(50% - 20px);
+    /* Set width for each card (2 cards in a row with 20px gap) */
+    max-width: calc(50% - 20px);
+    /* Adjust maximum width of the card */
   }
 }
 
 @media screen and (max-width: 576px) {
   .carddd {
-    flex: 0 0 calc(100% - 20px); /* Set width for each card (1 card in a row with 20px gap) */
-    max-width: calc(100% - 20px); /* Adjust maximum width of the card */
+    flex: 0 0 calc(100% - 20px);
+    /* Set width for each card (1 card in a row with 20px gap) */
+    max-width: calc(100% - 20px);
+    /* Adjust maximum width of the card */
   }
 }

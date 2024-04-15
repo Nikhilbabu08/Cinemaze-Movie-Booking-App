@@ -72,7 +72,7 @@ const AllMovies = () => {
     <div className="container mt-5">
       {isLoading ? ( // Check loading state
         <div className='text-center' style={{ marginTop: "190px" }}>
-          <div className="spinner-grow text-primary mt-5" style={{ width: "5rem", height: "5rem" }} role="status">
+          <div className="spinner-grow text-primary mt-5" style={{ width: "3rem", height: "3rem" }} role="status">
             <span className="visually-hidden mt-5">Loading...</span>
           </div>
         </div>
