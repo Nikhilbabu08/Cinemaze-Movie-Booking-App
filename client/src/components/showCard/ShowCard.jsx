@@ -10,8 +10,8 @@ const ShowCard = () => {
     const [loading, setLoading] = useState(true);
     const [disabledMovies, setDisabledMovies] = useState(() => {
         // Retrieve disabledMovies from local storage on component mount
-       /* const storedDisabledMovies = localStorage.getItem('disabledMovies');
-        return storedDisabledMovies ? JSON.parse(storedDisabledMovies) : [];*/
+        const storedDisabledMovies = localStorage.getItem('disabledMovies');
+        return storedDisabledMovies ? JSON.parse(storedDisabledMovies) : [];
     });
 
     useEffect(() => {
