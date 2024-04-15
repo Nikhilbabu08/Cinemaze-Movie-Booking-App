@@ -75,7 +75,7 @@ const NavBar = () => {
               {user &&
                 <>
                   <li className="nav-item">
-                    <NavLink to={'/home'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">Home</NavLink>
+                    <NavLink to={'/'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">Home</NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink to={'/allMoviesUser'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">All Movies</NavLink>
