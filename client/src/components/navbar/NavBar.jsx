@@ -55,7 +55,7 @@ const NavBar = () => {
               {admin &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/allMovies'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>All Movies</Link>
+                    <Link to={'/allMovies'} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
                     <Link to={'/addMovie'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>Add Movies</Link>
