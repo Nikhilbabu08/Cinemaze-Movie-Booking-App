@@ -10,8 +10,8 @@ const ShowCard = () => {
     const [loading, setLoading] = useState(true);
     const [disabledMovies, setDisabledMovies] = useState(() => {
         // Retrieve disabledMovies from local storage on component mount
-        const storedDisabledMovies = localStorage.getItem('disabledMovies');
-        return storedDisabledMovies ? JSON.parse(storedDisabledMovies) : [];
+       /* const storedDisabledMovies = localStorage.getItem('disabledMovies');
+        return storedDisabledMovies ? JSON.parse(storedDisabledMovies) : [];*/
     });
 
     useEffect(() => {
@@ -22,6 +22,23 @@ const ShowCard = () => {
                 setLoading(false);
             });
     }, []);
+
+    const toggleMovieStatus = async (movieId) => {
+        try {
+            const response = await axios.put(`${API_BASE_URL}/movie/${movieId}/toggle`);
+            const updatedMovie = response.data; // Assuming the response contains the updated movie details
+            // Update disabledMovies state based on the new status of the movie
+            setDisabledMovies(prevDisabledMovies => {
+                if (updatedMovie.enabled) {
+                    return prevDisabledMovies.filter(id => id !== movieId);
+                } else {
+                    return [...prevDisabledMovies, movieId];
+                }
+            });
+        } catch (error) {
+            console.error('Error toggling movie status:', error);
+        }
+    };
 
     return (
         <div className="container-fluid mt-2">
@@ -42,7 +59,7 @@ const ShowCard = () => {
                                     <h5 className="card-title cardd-title"> {item.title.length > 27 ? `${item.title.substring(0, 27)}...` : item.title}</h5>
                                     <p className="card-text cardd-text">{item.genre}</p>
                                     {!admin ? (
-                                        (disabledMovies.includes(item._id)) ? ( // Check if admin or movie is disabled
+                                        (disabledMovies.includes(item._id)) ? (
                                             <div className="d-grid">
                                                 <button className="btn btn-secondary" type="button" disabled><b>Not Available</b></button>
                                             </div>
