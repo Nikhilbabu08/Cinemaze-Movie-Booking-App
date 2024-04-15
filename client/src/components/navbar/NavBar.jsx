@@ -10,6 +10,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const admin = useSelector(store => store.auth.admin);
   const user = useSelector(store => store.auth.user);
+  const offcanvasRef = useRef(null);
 
   const handleAdminLogout = (event) => {
     event.preventDefault();
@@ -30,6 +31,13 @@ const NavBar = () => {
       });
       dispatch(userLogout());
       navigate('userLogin');
+    }
+  };
+
+  const closeOffcanvas = () => {
+    if (offcanvasRef.current) {
+      const offcanvas = new window.bootstrap.Offcanvas(offcanvasRef.current);
+      offcanvas.hide();
     }
   };
 
@@ -57,7 +65,7 @@ const NavBar = () => {
               {admin &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/allMovies'} onClick={(event) => { event.preventDefault(); navigate('/allMovies');document.getElementById("offcanvasNavbar").classList.remove("show") }} className="nav-link" >All Movies</Link>
+                    <Link to={'/allMovies'} onClick={(event) => { event.preventDefault(); closeOffcanvas(); navigate('/allMovies') }} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
                     <Link to={'/addMovie'} onClick={(event) => { event.preventDefault(); navigate('/addMovie') }} className="nav-link">Add Movies</Link>
