@@ -40,7 +40,7 @@ const NavBar = () => {
           <button className="navbar-toggler" type="button" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNavAltMarkup">
+          <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`} id="navbarNavAltMarkup" style={{ position: 'absolute', right: '0', top: '100%' }}>
             <div className="navbar-nav">
               <NavLink to={'/'} className='nav-link'>Home</NavLink>
             </div>
