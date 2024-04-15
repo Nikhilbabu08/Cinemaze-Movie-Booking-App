@@ -40,11 +40,11 @@ const NavBar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
         </div>
-        <div className="collapse navbar-collapse d-lg-block">
+       {/* <div className="collapse navbar-collapse d-lg-block">
           <div className="navbar-nav">
             <NavLink to={'/'} className='nav-link'>Home</NavLink>
           </div>
-        </div>
+  </div> */}
         <div className="offcanvas offcanvas-end" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" style={{backgroundColor:"#F0F3F4",width: '50%' }}>
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel"><b><span style={{ color: "#ff5733" }}>CIN</span>E<span style={{ color: "#ff5733" }}>MAZ</span>E</b></h5>

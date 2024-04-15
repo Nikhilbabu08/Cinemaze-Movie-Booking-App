@@ -22,7 +22,7 @@ const Carousel = () => {
                                 <img src="https://images.ottplay.com/images/mammootty-in-turbo-first-look-poster-1701006051.jpg?impolicy=ottplay-20210210&width=1200&height=675" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
                             </div>
                             <div className="carousel-item">
-                                <img src="https://english.mathrubhumi.com/image/contentid/policy:1.8238174:1674289460/New%20Project%20(15).png?$p=2bd0e28&f=16x10&w=852&q=0.8" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
+                                <img src="https://www.indiatourism.guide/wp-content/uploads/2023/04/pushpa-2-release-date-1024x576.jpeg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
                             </div>
                         </div>
                         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
