@@ -45,7 +45,7 @@ const ShowCard = () => {
             <h5 className='bg-gradient rounded text-dark px-2'><b>Now Showing🎬</b></h5>
             {loading ? (
                 <div className='text-center' style={{ marginTop: "90px" }}>
-                    <div className="spinner-grow text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
+                    <div className="spinner-grow text-primary" style={{ width: "2rem", height: "2rem" }} role="status">
                         <span className="visually-hidden">Loading...</span>
                     </div>
                 </div>

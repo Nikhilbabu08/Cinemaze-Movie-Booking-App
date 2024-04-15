@@ -29,7 +29,7 @@ const AllMoviesUser = () => {
                     <h1 className='text-center text-dark  mt-4'><b>All Movies</b></h1>
                     {isLoading ? ( // Check loading state
                         <div className='text-center' style={{ marginTop: "190px" }}>
-                            <div className="spinner-grow text-primary mt-" style={{ width: "3rem", height: "3rem" }} role="status">
+                            <div className="spinner-grow text-primary mt-" style={{ width: "2rem", height: "2rem" }} role="status">
                                 <span className="visually-hidden mt-5">Loading...</span>
                             </div>
                         </div>

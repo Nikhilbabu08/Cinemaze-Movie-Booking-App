@@ -197,7 +197,7 @@ const View = () => {
                         </div></>
                 ) : (
                     <div className='text-center' style={{ marginTop: "190px" }}>
-                        <div className="spinner-grow text-primary mt-5" style={{ width: "5rem", height: "5rem" }} role="status">
+                        <div className="spinner-grow text-primary mt-5" style={{ width: "2rem", height: "2rem" }} role="status">
                             <span className="visually-hidden mt-5">Loading...</span>
                         </div>
                     </div>
