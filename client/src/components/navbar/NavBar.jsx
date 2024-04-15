@@ -55,10 +55,10 @@ const NavBar = () => {
               {admin &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/allMovies'} className="nav-link" >All Movies</Link>
+                    <Link to={'/allMovies'} onClick={(event) => { event.preventDefault(); navigate('/allMovies') }} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/addMovie'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>Add Movies</Link>
+                    <Link to={'/addMovie'} className="nav-link">Add Movies</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" onClick={handleAdminLogout}>Logout</Link>
@@ -68,10 +68,10 @@ const NavBar = () => {
               {user &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/allMoviesUser'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>All Movies</Link>
+                    <Link to={'/allMoviesUser'} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/myBooking'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>My Bookings</Link>
+                    <Link to={'/myBooking'} className="nav-link">My Bookings</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" onClick={handleUserLogout}>Logout</Link>
@@ -81,10 +81,10 @@ const NavBar = () => {
               {!admin && !user &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/userLogin'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>User</Link>
+                    <Link to={'/userLogin'} className="nav-link">User</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/adminLogin'} className="nav-link" onClick={() => document.getElementById("offcanvasNavbar").classList.remove("show")}>Admin</Link>
+                    <Link to={'/adminLogin'} className="nav-link">Admin</Link>
                   </li>
                 </>
               }
