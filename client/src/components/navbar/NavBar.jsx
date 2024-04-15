@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { adminLogout, userLogout } from '../../store/AuthSlice';
@@ -10,6 +10,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const admin = useSelector(store => store.auth.admin);
   const user = useSelector(store => store.auth.user);
+  const [isOffcanvasOpen, setIsOffcanvasOpen] = useState(false);
   const offcanvasRef = useRef(null);
 
   const handleAdminLogout = (event) => {
@@ -34,70 +35,66 @@ const NavBar = () => {
     }
   };
 
+  const toggleOffcanvas = () => {
+    setIsOffcanvasOpen(!isOffcanvasOpen);
+  };
+
   const closeOffcanvas = () => {
-    if (offcanvasRef.current) {
-      const offcanvas = new window.bootstrap.Offcanvas(offcanvasRef.current);
-      offcanvas.hide();
-    }
+    setIsOffcanvasOpen(false);
   };
 
   return (
     <nav className="navbar navbar-dark navbar-expand-lg fixed-top space-between " style={{ backgroundColor: "#154360 ", color: "#000" }}>
       <div className="container-fluid">
-        <NavLink to={'/'} className="navbar-brand"><b><span style={{ color: "#ff5733" }}>CIN</span>E<span style={{ color: "#ff5733" }}>MAZ</span>E</b></NavLink>
+        <NavLink exact to={'/'} className="navbar-brand"><b><span style={{ color: "#ff5733" }}>CIN</span>E<span style={{ color: "#ff5733" }}>MAZ</span>E</b></NavLink>
         <div className="d-lg-none">
-          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <button className="navbar-toggler" type="button" onClick={toggleOffcanvas} aria-expanded={isOffcanvasOpen ? "true" : "false"}>
             <span className="navbar-toggler-icon"></span>
           </button>
         </div>
-        {/* <div className="collapse navbar-collapse d-lg-block">
-          <div className="navbar-nav">
-            <NavLink to={'/'} className='nav-link'>Home</NavLink>
-          </div>
-  </div> */}
-        <div className="offcanvas offcanvas-end" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" style={{ backgroundColor: "#F0F3F4", width: '50%' }}>
+        <div className={`offcanvas offcanvas-end ${isOffcanvasOpen ? 'show' : ''}`} ref={offcanvasRef} data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel" style={{ backgroundColor: "#F0F3F4", width: '50%' }}>
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel"><b><span style={{ color: "#ff5733" }}>CIN</span>E<span style={{ color: "#ff5733" }}>MAZ</span>E</b></h5>
-            <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" className="btn-close text-reset" onClick={closeOffcanvas} aria-label="Close"></button>
           </div>
           <div className="offcanvas-body" style={{ backgroundColor: "#154360 ", color: "#000", transition: 'transform 0.3s ease' }}>
             <ul className="navbar-nav flex-grow-1 pe-3">
               {admin &&
                 <>
                   <li className="nav-item">
-                    <NavLink to={'/allMovies'} onClick={closeOffcanvas} className="nav-link" >All Movies</NavLink>
+                    <NavLink to={'/allMovies'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">All Movies</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to={'/addMovie'} onClick={closeOffcanvas} className="nav-link">Add Movies</NavLink>
+                    <NavLink to={'/addMovie'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">Add Movies</NavLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" onClick={handleAdminLogout}>Logout</Link>
+                    <a href="#" className="nav-link" onClick={handleAdminLogout}>Logout</a>
                   </li>
                 </>
               }
               {user &&
                 <>
                   <li className="nav-item">
-                    <NavLink to={'/home'} onClick={closeOffcanvas} className="nav-link" >Home</NavLink>
+                    <NavLink to={'/home'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">Home</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to={'/allMoviesUser'} onClick={closeOffcanvas} className="nav-link" >All Movies</NavLink>
+                    <NavLink to={'/allMoviesUser'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">All Movies</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to={'/myBooking'} onClick={closeOffcanvas} className="nav-link">My Bookings</NavLink>
+                    <NavLink to={'/myBooking'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">My Bookings</NavLink>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" onClick={handleUserLogout}>Logout</Link>
+                    <a href="#" className="nav-link" onClick={handleUserLogout}>Logout</a>
                   </li>
                 </>
               }
               {!admin && !user &&
                 <>
                   <li className="nav-item">
-                    <NavLink to={'/userLogin'} onClick={closeOffcanvas} className="nav-link">User</NavLink>
+                    <NavLink to={'/userLogin'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">User</NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to={'/adminLogin'} onClick={closeOffcanvas} className="nav-link">Admin</NavLink>
+                    <NavLink to={'/adminLogin'} onClick={closeOffcanvas} className="nav-link" activeClassName="active">Admin</NavLink>
                   </li>
                 </>
               }
