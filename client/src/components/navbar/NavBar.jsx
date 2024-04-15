@@ -11,7 +11,8 @@ const NavBar = () => {
   const admin = useSelector(store => store.auth.admin);
   const user = useSelector(store => store.auth.user);
 
-  const handleAdminLogout = () => {
+  const handleAdminLogout = (event) => {
+    event.preventDefault();
     if (admin) {
       axios.post(`${API_BASE_URL}/admin/logout`, {}, {
         headers: { 'Authorization': `Bearer ${admin.token}` }
@@ -21,7 +22,8 @@ const NavBar = () => {
     }
   };
 
-  const handleUserLogout = () => {
+  const handleUserLogout = (event) => {
+    event.preventDefault();
     if (user) {
       axios.post(`${API_BASE_URL}/user/logout`, {}, {
         headers: { 'Authorization': `Bearer ${user.token}` }
@@ -58,7 +60,7 @@ const NavBar = () => {
                     <Link to={'/allMovies'} onClick={(event) => { event.preventDefault(); navigate('/allMovies') }} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/addMovie'} className="nav-link">Add Movies</Link>
+                    <Link to={'/addMovie'} onClick={(event) => { event.preventDefault(); navigate('/addMovie') }} className="nav-link">Add Movies</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" onClick={handleAdminLogout}>Logout</Link>
@@ -68,10 +70,10 @@ const NavBar = () => {
               {user &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/allMoviesUser'} className="nav-link" >All Movies</Link>
+                    <Link to={'/allMoviesUser'} onClick={(event) => { event.preventDefault(); navigate('/allMoviesUser') }} className="nav-link" >All Movies</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/myBooking'} className="nav-link">My Bookings</Link>
+                    <Link to={'/myBooking'} onClick={(event) => { event.preventDefault(); navigate('/myBooking') }} className="nav-link">My Bookings</Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" onClick={handleUserLogout}>Logout</Link>
@@ -81,10 +83,10 @@ const NavBar = () => {
               {!admin && !user &&
                 <>
                   <li className="nav-item">
-                    <Link to={'/userLogin'} className="nav-link">User</Link>
+                    <Link to={'/userLogin'} onClick={(event) => { event.preventDefault(); navigate('/userLogin') }} className="nav-link">User</Link>
                   </li>
                   <li className="nav-item">
-                    <Link to={'/adminLogin'} className="nav-link">Admin</Link>
+                    <Link to={'/adminLogin'} onClick={(event) => { event.preventDefault(); navigate('/adminLogin') }} className="nav-link">Admin</Link>
                   </li>
                 </>
               }
