@@ -45,12 +45,12 @@ const NavBar = () => {
             <NavLink to={'/'} className='nav-link'>Home</NavLink>
           </div>
         </div>
-        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style={{ backgroundColor: "#154360 ", color: "#000",width: '50%' }}>
           <div className="offcanvas-header">
             <h5 className="offcanvas-title" id="offcanvasNavbarLabel"><b><span style={{ color: "#ff5733" }}>CIN</span>E<span style={{ color: "#ff5733" }}>MAZ</span>E</b></h5>
             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div className="offcanvas-body  ms-auto"  style={{ backgroundColor: "#154360 ", color: "#000",width: '50%' }}>
+          <div className="offcanvas-body  ms-auto">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               {admin &&
                 <>
