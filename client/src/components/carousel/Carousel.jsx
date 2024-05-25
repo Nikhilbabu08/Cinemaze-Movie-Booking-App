@@ -16,10 +16,10 @@ const Carousel = () => {
                                 <img src="https://timesofindia.indiatimes.com/photo/msid-102067247,imgsize-143524.cms" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
                             </div>
                             <div className="carousel-item" >
-                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4V-oT2drLU1gMd3e3kSbUqIt4wQgNWThLy6n6WT9CSPrEeJ22hLt6nepGj0HHraBaxj3MSTprs6KmggJ-J-gokD9ao0h1nIE7A2qzw3tTnSCdeIHKIPRGTk06Rnd0jrGlU7ZwbjSS4OXT-h68WqXi-DDEVF4lN3ULdkNtitupIbPgMid5WYqMFnfZgrg/s1280/Lucky%20Baskhar%20First%20Look.jpg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
+                                <img src="https://www.kerala9.com/wp-content/uploads/2022/01/barroz-movie-hd-poster-002.jpg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
                             </div>
                             <div className="carousel-item">
-                                <img src="https://images.ottplay.com/images/mammootty-in-turbo-first-look-poster-1701006051.jpg?impolicy=ottplay-20210210&width=1200&height=675" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
+                                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4V-oT2drLU1gMd3e3kSbUqIt4wQgNWThLy6n6WT9CSPrEeJ22hLt6nepGj0HHraBaxj3MSTprs6KmggJ-J-gokD9ao0h1nIE7A2qzw3tTnSCdeIHKIPRGTk06Rnd0jrGlU7ZwbjSS4OXT-h68WqXi-DDEVF4lN3ULdkNtitupIbPgMid5WYqMFnfZgrg/s1280/Lucky%20Baskhar%20First%20Look.jpg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
                             </div>
                             <div className="carousel-item">
                                 <img src="https://www.indiatourism.guide/wp-content/uploads/2023/04/pushpa-2-release-date-1024x576.jpeg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
