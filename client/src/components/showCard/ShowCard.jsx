@@ -52,7 +52,7 @@ const ShowCard = () => {
             ) : (
                 <div className="row">
                     <div className="card-container cardd-container">
-                        {movies.map((item) => (
+                        {movies.reverse().map((item) => (
                             <div className="card cardd mt-1" key={item._id}>
                                 <img src={item.posterUrl} className="card-img-top" alt={item.title} />
                                 <div className="card-body cardd-body">
