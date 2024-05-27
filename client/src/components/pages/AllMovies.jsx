@@ -81,7 +81,7 @@ const AllMovies = () => {
           <div className="col">
             <h1 className='text-center text-dark mt-2'><b>All Movies</b></h1>
             <div className="card-container carddd-container">
-              {movies.map((item) => (
+              {movies.reverse().map((item) => (
                 <div className="card carddd mt-2" key={item._id}>
                   <img src={item.posterUrl} className="card-img-top" alt={item.title} />
                   <div className="card-body carddd-body">
