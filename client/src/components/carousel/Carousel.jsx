@@ -10,7 +10,7 @@ const Carousel = () => {
                     <div id="carouselExampleAutoplaying" className="carousel slide mt-2" data-bs-ride="carousel"  >
                         <div className="carousel-inner">
                             <div className="carousel-item active">
-                                <img src="https://i.ytimg.com/vi/Wwr-UL5e02U/maxresdefault.jpg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
+                                <img src="https://static.moviecrow.com/gallery/20240815/232882-The%20Greatest%20of%20All%20Time%20Vijay%20Trailer%20Release%20Date%20Time%20Tamil.jpg" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
                             </div>
                             <div className="carousel-item">
                                 <img src="https://timesofindia.indiatimes.com/photo/msid-102067247,imgsize-143524.cms" className=" w-100 " alt="..." style={{ maxHeight: '300px' }} />
